@@ -1,0 +1,63 @@
+\documentclass{resume} % Custom resume.cls
+
+\usepackage[left=0.4in, top=0.4in, right=0.4in, bottom=0.4in]{geometry}
+\usepackage{hyperref}
+\name{Chandrahaas Jasti}
+\address{+91 7981807540 \\ Hyderabad, India}
+\address{\href{mailto:chandrahaasjasti@gmail.com}{chandrahaasjasti@gmail.com} \\ \href{https://linkedin.com/in/chandrahaas-jasti-87b697288}{in/chandrahaas-jasti-87b697288} \\ \href{https://github.com/ChandrahaasJ}{github.com/ChandrahaasJ}}
+
+\begin{document}
+
+%-------------------------------------
+\begin{rSection}{Objective}
+As a Computer Science major, I’ve consistently explored technologies that sparked my curiosity. Along the way, I’ve faced my fair share of roadblocks, but I’ve always thrived on the adrenaline rush that comes from overcoming them. I’m driven by a love for learning and a desire to look back each day and realize I can now do something I couldn’t do yesterday.
+\end{rSection}
+
+%-------------------------------------
+\begin{rSection}{Education}
+{\bf Computer Science Engineering}, KMIT \hfill Expected 2026 \\
+Relevant Coursework: {AI}
+\end{rSection}
+
+%-------------------------------------
+\begin{rSection}{Skills}
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{4ex}} l }
+Technical Skills: & {AI} \\
+Libraries: & {AI} \\
+Tools: & {AI} \\
+Databases: & {AI} \\
+\end{tabular}
+\end{rSection}
+
+%-------------------------------------
+\begin{rSection}{Projects}
+
+\item \textbf{Ransomware Detection and Prevention} \\
+Designed a 3-tier architecture for real-time ransomware detection using Layer 7 SMB protocol analysis. Developed a custom tokenizer to convert network packets into 28×28×1 images for CNN-LSTM classification. Used WebSockets and Redis for communication and caching. Deployed on Kubernetes.
+
+\item \textbf{Breast Cancer Detection} \\
+Built an AI system for early detection using EfficientNet and ViT for classification, and U-Net \& UNeTr for tumor segmentation. Integrated into a MERN-stack platform using Flask APIs.
+
+\item \textbf{Multi-Modal Deepfake Detection System} \\
+Built a model using CNN with LIME for image forensics and K-NN on Mel spectrograms for audio. Synthesized data with GANs. Achieved 98\% accuracy.
+
+\item \textbf{ChromeSearcherAI (AI Agent System)} \\
+Built an MCP-based client-server system communicating with Gemini 2.0 Flash. Automated club workflows like scheduling, filtering Google Forms, OCR, and WhatsApp group creation.
+
+\end{rSection}
+
+%-------------------------------------
+\begin{rSection}{Leadership}
+\begin{itemize}
+    \item \textbf{Club Head, Riti (Upcycling Club), KMIT} \\
+    Led a team of 100+ members, organizing campus-wide upcycling and fashion events.
+
+    \item \textbf{Chairperson of Membership, Rotaract KMIT} \\
+    Implemented initiatives to foster a proactive club environment.
+
+    \item \textbf{Student Council Member, KMIT} \\
+    Addressed and resolved student grievances, improving the campus experience.
+\end{itemize}
+\end{rSection}
+
+\end{document}
