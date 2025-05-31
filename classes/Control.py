@@ -3,15 +3,23 @@ class controller:
     def __init__(self):
         self.section_start=r"\begin{{rSection}}{{{}}}"
         self.section_end = r"\end{rSection}"
+        self.begin="k"
+
+    def get_begin(self,personal_infos):
+        github=personal_infos["github"]
+        linkedin=personal_infos["linkedin"]
+        email=personal_infos["email"]
+        phone=personal_infos["phone"]
+        
+
 
     def build_projects(self,pjson,text):
         """
         Builds the projects from the provided JSON data.
         
         :param projects_json: JSON data containing project information.
-        :return: None
+        :return: latex
         """
-        # Implementation for building projects goes here
         projects = json.loads(pjson)
         text+=self.begin_section("Projects")
         text+="\n"
@@ -25,9 +33,7 @@ class controller:
             print("=============================================")
         #text+="\n"
         text+=self.end_section()
-        with open (r"C:\ResumeGenerator\resGen\test\latexTest.txt","w") as f:
-            f.write(text)
-        print("written successfully")
+        return text
 
     def begin_section(self, section_name):
         """
@@ -44,6 +50,9 @@ class controller:
         :return: LaTeX formatted string for the section end.
         """
         return self.section_end
+    
+
+
 obj=controller()
 dict={"0":{"name":"Ransomware Detection and Prevention","description":"Designed a 3-tier architecture for real-time ransomware detection using Layer 7 SMB protocol analysis. Developed a custom tokenizer to convert network packets into 28×28×1 images for CNN-LSTM classification. Used WebSockets and Redis for communication and caching. Deployed on Kubernetes."},"1":{"name":"deepfake","description":"detect morphs"}}
 json_data=json.dumps(dict)
