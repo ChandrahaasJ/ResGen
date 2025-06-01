@@ -24,4 +24,5 @@ export interface AuthResponse {
   message: string;
   redirectUrl?: string;
   errors?: ValidationErrors;
+  token?: string; // JWT token for authenticated requests
 }
