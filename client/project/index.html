@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="csrf-token" content="" id="csrf-token" />
+    <title>Resgen</title>
+    <meta name="description" content="Resgen - Your secure resume generation platform" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // This would be set by your backend in a real application
+      // For demo purposes, we're setting a dummy CSRF token
+      document.getElementById('csrf-token').setAttribute('content', Math.random().toString(36).substring(2, 15));
+    </script>
+  </body>
+</html>
