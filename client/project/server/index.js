@@ -7,6 +7,19 @@ import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv';
 import multer from 'multer';
 import path from 'path';
+import User from './User.js';
+import mongoose from 'mongoose';
+import jwt from 'jsonwebtoken';
+
+const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret';
+const JWT_EXPIRES_IN = '7d';
+
+mongoose.connect("mongodb+srv://kkk:25742004@cluster0.yixvr.mongodb.net/", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => console.log('MongoDB connected'))
+.catch(err => console.error('MongoDB connection error:', err));
 
 dotenv.config();
 
@@ -111,29 +124,29 @@ app.get('/api/schema-status', (req, res) => {
 });
 
 // Signup endpoint
+
+// Signup route
 app.post('/signup/resGen', async (req, res) => {
   try {
     const { username, email, password, confirm_password } = req.body;
-    
+
     // Server-side validation
     const errors = {};
-    
-    // Check if passwords match
+
     if (password !== confirm_password) {
       errors.confirm_password = 'Passwords do not match';
     }
-    
-    // Check password requirements
+
     const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/;
     if (!passwordRegex.test(password)) {
       errors.password = 'Password must be at least 8 characters with 1 number and 1 special character';
     }
-    
-    // Check for existing user
-    const existingUser = users.find(user => 
-      user.username === username || user.email === email
-    );
-    
+
+    // Check for existing user in DB
+    const existingUser = await User.findOne({ 
+      $or: [{ username }, { email }]
+    });
+
     if (existingUser) {
       if (existingUser.username === username) {
         errors.username = 'Username already exists';
@@ -142,7 +155,7 @@ app.post('/signup/resGen', async (req, res) => {
         errors.email = 'Email already exists';
       }
     }
-    
+
     if (Object.keys(errors).length > 0) {
       return res.status(400).json({
         success: false,
@@ -150,29 +163,26 @@ app.post('/signup/resGen', async (req, res) => {
         errors
       });
     }
-    
-    // Hash password
+
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
-    
-    // Create new user
-    const newUser = {
-      id: users.length + 1,
+
+    // Store new user in DB
+    const newUser = new User({
       username,
       email,
-      password: hashedPassword,
-      createdAt: new Date()
-    };
-    
-    // Store user in our "database"
-    users.push(newUser);
-    
-    // Create session
-    req.session.userId = newUser.id;
-    
+      password: hashedPassword
+    });
+
+    await newUser.save();
+
+    // Create JWT token
+    const token = jwt.sign({ userId: newUser._id }, JWT_SECRET, { expiresIn: JWT_EXPIRES_IN });
+
     res.status(201).json({
       success: true,
       message: 'User registered successfully',
+      token,
       redirectUrl: '/dashboard'
     });
   } catch (error) {
@@ -184,16 +194,14 @@ app.post('/signup/resGen', async (req, res) => {
   }
 });
 
-// Login endpoint
 app.post('/login/resGen', async (req, res) => {
   try {
     const { username_or_email, password } = req.body;
-    
-    // Find user
-    const user = users.find(user => 
-      user.username === username_or_email || user.email === username_or_email
-    );
-    
+
+    const user = await User.findOne({
+      $or: [{ username: username_or_email }, { email: username_or_email }]
+    });
+
     if (!user) {
       return res.status(400).json({
         success: false,
@@ -201,10 +209,9 @@ app.post('/login/resGen', async (req, res) => {
         errors: { general: 'Invalid username/email or password' }
       });
     }
-    
-    // Compare passwords
+
     const isMatch = await bcrypt.compare(password, user.password);
-    
+
     if (!isMatch) {
       return res.status(400).json({
         success: false,
@@ -212,13 +219,15 @@ app.post('/login/resGen', async (req, res) => {
         errors: { general: 'Invalid username/email or password' }
       });
     }
-    
-    // Create session
-    req.session.userId = user.id;
-    
+
+    // Create JWT token
+    const token = jwt.sign({ userId: user._id }, JWT_SECRET, { expiresIn: JWT_EXPIRES_IN });
+
+    console.log('User logged in:', user.username);
     res.status(200).json({
       success: true,
       message: 'Login successful',
+      token,
       redirectUrl: '/dashboard'
     });
   } catch (error) {
@@ -229,6 +238,7 @@ app.post('/login/resGen', async (req, res) => {
     });
   }
 });
+
 
 // Create Schema endpoint
 app.post('/createSchema', upload.array('certifications'), async (req, res) => {

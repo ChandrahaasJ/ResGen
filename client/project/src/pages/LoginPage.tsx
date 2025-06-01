@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Eye, EyeOff } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -10,6 +10,16 @@ import { validateLoginForm } from '../utils/validation';
 import { loginUser } from '../utils/api';
 import { LoginFormData, ValidationErrors } from '../types/auth';
 
+// Helper function to validate JWT token expiration
+const isTokenValid = (token: string): boolean => {
+  try {
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    return payload.exp * 1000 > Date.now();
+  } catch {
+    return false;
+  }
+};
+
 const LoginPage: React.FC = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState<LoginFormData>({
@@ -20,6 +30,14 @@ const LoginPage: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [serverError, setServerError] = useState<string>('');
+
+  // On mount, check if JWT token is in localStorage & valid -> redirect to dashboard
+  useEffect(() => {
+    const token = localStorage.getItem('jwtToken');
+    if (token && isTokenValid(token)) {
+      navigate('/dashboard');
+    }
+  }, [navigate]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -36,18 +54,22 @@ const LoginPage: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     const validationErrors = validateLoginForm(formData);
     setErrors(validationErrors);
-    
+
     if (Object.keys(validationErrors).length === 0) {
       setIsSubmitting(true);
       setServerError('');
-      
+
       try {
         const response = await loginUser(formData);
-        
+
         if (response.success) {
+          // Save JWT token to localStorage
+          if (response.token) {
+            localStorage.setItem('jwtToken', response.token);
+          }
           navigate(response.redirectUrl || '/dashboard');
         } else {
           if (response.errors) {
@@ -110,6 +132,7 @@ const LoginPage: React.FC = () => {
             type="button"
             className="absolute right-3 top-[34px] text-gray-400 hover:text-gray-300"
             onClick={() => setShowPassword(!showPassword)}
+            aria-label={showPassword ? "Hide password" : "Show password"}
           >
             {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
           </button>

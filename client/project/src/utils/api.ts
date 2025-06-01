@@ -1,6 +1,6 @@
 import { SignupFormData, LoginFormData, AuthResponse } from '../types/auth';
 
-// Function to fetch CSRF token from the server
+// Fetch CSRF token
 const fetchCSRFToken = async (): Promise<string> => {
   try {
     const response = await fetch('http://localhost:3000/api/csrf-token', {
@@ -14,10 +14,8 @@ const fetchCSRFToken = async (): Promise<string> => {
   }
 };
 
-// Get CSRF token
 export const getCSRFToken = async (): Promise<string> => {
-  const token = await fetchCSRFToken();
-  return token;
+  return await fetchCSRFToken();
 };
 
 export const signupUser = async (formData: SignupFormData): Promise<AuthResponse> => {
@@ -33,7 +31,14 @@ export const signupUser = async (formData: SignupFormData): Promise<AuthResponse
       credentials: 'include',
     });
 
-    return await response.json();
+    const data: AuthResponse = await response.json();
+
+    // Save JWT token if present
+    if (data.success && data.token) {
+      localStorage.setItem('jwtToken', data.token);
+    }
+
+    return data;
   } catch (error) {
     return {
       success: false,
@@ -55,7 +60,14 @@ export const loginUser = async (formData: LoginFormData): Promise<AuthResponse> 
       credentials: 'include',
     });
 
-    return await response.json();
+    const data: AuthResponse = await response.json();
+
+    // Save JWT token if present
+    if (data.success && data.token) {
+      localStorage.setItem('jwtToken', data.token);
+    }
+
+    return data;
   } catch (error) {
     return {
       success: false,
