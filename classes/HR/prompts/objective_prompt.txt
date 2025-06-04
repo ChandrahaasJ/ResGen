@@ -18,10 +18,15 @@ OUTPUT FORMAT: JSON
 
 OUTPUTS:
 1. current_work: this includes what the cadidate is doing now. He/She can be a student,teacher,intern etc
+            FORMAT: Key:String , Value: dictionary(key: String, value: list)
 2. experience: where the candidate has worked before, must extract the name of the workplace as "company_name" and the title of project as "project_title" and the description as "project_description"
-3. extract domains the candidate has worked under (example: GenerativeAI,DevOps,CyberSecurity) and the skills he knows through that. for example: prompt_engineering,MCP,Agentic architectures,LLM finetuning all fall under the domain GenerativeAI
-4. list all the candidates extra_curriculars or acheivements. this can include in-college contributions like being a part of the student council. Can also be others like winning a competiton(like a hackathon).return the name and description(example: {"Club-Head of Riti":{led a team of 100 students to make a change in sustainable fashion}})
-5.  if any of the above points are missed be sure to add them into "missed"
+            FORMAT: Key:String,Value: dictionary(key: String, value: list)
+3. skills: extract domains the candidate has worked under (example: GenerativeAI,DevOps,CyberSecurity) and the skills he knows through that. for example: prompt_engineering,MCP,Agentic architectures,LLM finetuning all fall under the domain GenerativeAI
+            FORMAT: Key:String,Value: dictionary(key: String, value: list)
+4. interests: list all the candidates extra_curriculars or acheivements. this can include in-college contributions like being a part of the student council. Can also be others like winning a competiton(like a hackathon).return the name and description(example: {"Club-Head of Riti":{led a team of 100 students to make a change in sustainable fashion}})
+            FORMAT: Key:String, Value:list
+5. missed: if any of the above points are missed be sure to add them into "missed"
+            FORMAT: key:String, Value:list
  
 
 GUIDELINES:
@@ -30,6 +35,7 @@ GUIDELINES:
 3. if in case of missing any of the above items put Null value in the key. (Example: expereince:{} )
 4. DO NOT include projects in experience.
 5. once the output generation is done, go through all the fields once again and add missed fields int "missed"
+5. DO NOT assign "null" as a value in the json. simply append an empty dictionary or a list which is specified in the output format.
 
 EXAMPLE:
 Candidate's answer to "Tell me about yourself":

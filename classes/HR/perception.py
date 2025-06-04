@@ -5,11 +5,20 @@ class Perception:
         self.auth=auth
 
 
-    def get_perception(self, response):
+    def get_Initialperception(self, response):
         client=self.auth.client
         prompt = self.initial_prompt + response + "\n\nFINAL INSTRUCTION:\nBe sure to use the examples, guidelines, and instructions provided in the prompt to generate the response in JSON format ONLY.\n\n"
         response = client.models.generate_content(
             model="gemini-2.0-flash", contents=prompt
         )
-        return response.text
+        ans=self.strip(response.text)
+        return eval(ans)
     
+    def strip(self, resp):
+        # Remove triple backticks and "json" (case-insensitive) from the start and end
+        resp = resp.strip()
+        if resp.startswith("```"):
+            resp = resp.lstrip("`").lstrip().removeprefix("json").lstrip()
+        if resp.endswith("```"):
+            resp = resp.rstrip("`").rstrip()
+        return resp
