@@ -1,0 +1,86 @@
+{
+   "iteration 1": {"agent1": "Tell me about yourself",
+                    "reply":  "This is Pravalika and I am currently in my 3rd year of engineering in kmit. I’ve spent my college years learning new programming languages and experimenting with them through problem solving and projects. I have done 2 projects which come under generative ai domain. The first project’s chatbot for medical queries which focuses on giving day to day medical related information when asked by the user and to achieve that  my team and me have used an llm called Bert and rag for retrieval of the apt information. We have also used faiss that’s a Facebook ai similarly search it’s a library which helps mapping similar data together, by using both of them the retrieval process became accurate. The other project was called as FYI - for your information. This was a news generator which summarises different articles from different sources and gives you a better idea of the news topic, another feature was YouTube summarisation as well. These are the two projects I have done and I learnt a lot from these. I’ve learnt about llms, about front end, back end and all the different aspects of building a project. I am proficient in speaking skills and a good team spirit",
+                    "agent2":{
+                                "name": "Pravalika",
+                                "phone_number": "",
+                                "email": "",
+                                "current_work": {
+                                    "Student": ["3rd year", "kmit", "Engineering"]
+                                },
+                                "experience": {},
+                                "skills": {
+                                    "Programming Languages": [],
+                                    "Generative AI": ["LLMs"],
+                                    "Project Development": ["Front end", "Back end"],
+                                    "Soft Skills": ["Speaking", "Team spirit"]
+                                },
+                                "acheivements": [],
+                                "interests": [],
+                                "ambiguous": []
+                            },
+                    "heuristic 1":{
+                                    "name": "Pravalika",
+                                    "phone_number": "",
+                                    "email": "",
+                                    "current_work": {
+                                        "Student": ["3rd year", "kmit", "Engineering"]
+                                    },
+                                    "experience": {},
+                                    "skills": {
+                                        "Programming Languages": [],
+                                        "Generative AI": ["LLMs"],
+                                        "Project Development": ["Front end", "Back end"],
+                                        "Soft Skills": ["Speaking", "Team spirit"]
+                                    },
+                                    "acheivements": [],
+                                    "interests": [],
+                                    "ambiguous": [],
+                                    "missed":["phone_number","email", "experience","acheivements","interests" ]
+                                }
+                },
+    "iteration 2": {"agent":"Pravalika, please provide your phone number, email, experience, achievements, and interests.",
+                    "user": "my email is pravLik@gmail.com, you can contact me at 79818075444. I dont have any coorporate experience but I have worked on projects extensively. My fields of interests include GenAI, utiliszing apis and dogs. As for acheivements, i am ranked among top 500k in leetcode",
+                    "agent2":{
+                                "name": "Pravalika",
+                                "phone_number": "79818075444",
+                                "email": "pravLik@gmail.com",
+                                "current_work": {
+                                    "Student": ["3rd year", "kmit", "Engineering"]
+                                },
+                                "experience": {"no": "corporate experience", "projects": "extensive"},
+                                "skills": {
+                                    "Programming Languages": [],
+                                    "Generative AI": ["LLMs"],
+                                    "Project Development": ["Front end", "Back end"],
+                                    "Soft Skills": ["Speaking", "Team spirit"]
+                                },
+                                "acheivements": ["top 500k in leetcode"],
+                                "interests": ["GenAI","utilizing APIs", "dogs"],
+                                "ambiguous": []
+                            },
+                    "heuristic 2":{
+                                    "name": "Pravalika",
+                                    "phone_number": "79818075444",
+                                    "email": "pravLik@gmail.com",
+                                    "current_work": {
+                                        "Student": ["3rd year", "kmit", "Engineering"]
+                                    },
+                                    "experience": {"no": "corporate experience", "projects": "extensive"},
+                                    "skills": {
+                                        "Programming Languages": [],
+                                        "Generative AI": ["LLMs"],
+                                        "Project Development": ["Front end", "Back end"],
+                                        "Soft Skills": ["Speaking", "Team spirit"]
+                                    },
+                                    "acheivements": ["top 500k in leetcode"],
+                                    "interests": ["GenAI","utilizing APIs", "dogs"],
+                                    "ambiguous": [],
+                                    "missed":[]
+                                }
+                },
+    "iteration 3":{"agent1": "Thank you for the information, Pravalika. I have noted down your details. Is there anything else you would like to add or ask?",
+                    "reply": "No, I think that covers everything. Thank you for your time!"
+            },
+    "Output": "Give out an API call to the Database to store out the information in the database"
+}

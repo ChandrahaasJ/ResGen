@@ -1,10 +1,11 @@
 from Auth import Auth
-from HR.perception import Perception
+from resGen.classes.perception import Perception
 
 class Factory:
     def __init__(self,path):
         self.auth=Auth(path)
         self.client=self.auth.client
+        self.perception=Perception(self.auth)
     
     # def run(self):
     #     perception = Perception(self.auth)

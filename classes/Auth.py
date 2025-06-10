@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 import os
 from google import genai
 
-class AuthCl:
+class Auth:
     def __init__(self,path):
         load_dotenv(dotenv_path=path)
         self.__gemini = os.getenv("LLM")
