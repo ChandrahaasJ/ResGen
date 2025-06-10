@@ -44,16 +44,17 @@ class Perception:
 
     def find_empty_values(self, json_obj):
         l=[]
-        self.empty_adder(json_obj,l)
+        self.empty_adder(json_obj,l,"")
         return l
     
-    def empty_adder(self,json_obj,l):
+    def empty_adder(self,json_obj,l,path):
         for i in json_obj:
+            current_path = f"{path}.{i}" if path else i
             if(json_obj[i]==[] or json_obj[i]=={} or json_obj[i]=='' or json_obj[i]==None):
-                l.append(i)
+                l.append(current_path)
             else:
                 if(isinstance(json_obj[i],dict)):
-                    self.empty_adder(json_obj[i],l)
+                    self.empty_adder(json_obj[i],l,current_path)
         return l
     
 
