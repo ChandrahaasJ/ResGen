@@ -1,10 +1,10 @@
-from Auth import Auth
+from resGen.classes.Auth import Auth
 class Perception:
     def __init__(self,auth):
         with open(r"C:\ResumeGenerator\resGen\classes\HR\prompts\finalprompt.md", "r",encoding="utf-8") as f:
             self.initial_prompt=f.read()
         self.auth=auth
-        with open(r"C:\ResumeGenerator\resGen\classes\HR\prompts\missed_prompt.txt","r",encoding="utf-8") as f:
+        with open(r"C:\ResumeGenerator\resGen\classes\HR\prompts\loop2_prompt.md","r",encoding="utf-8") as f:
             self.missed_prompt=f.read()
 
 
@@ -15,7 +15,10 @@ class Perception:
             model="gemini-2.0-flash", contents=prompt
         )
         ans=self.strip(response.text)
-        return eval(ans)
+        ans=eval(ans)
+        l=self.find_empty_values(ans)
+        ans['missed']=l
+        return ans
     
     def strip(self, resp):
         # Remove triple backticks and "json" (case-insensitive) from the start and end
@@ -26,21 +29,21 @@ class Perception:
             resp = resp.rstrip("`").rstrip()
         return resp
     
-    def compute_missed(self,resp_json):
-        l=[]
-        for i in resp_json:
-            if(len(resp_json[i])==0):
-                l.append(i)
-        resp_json['missed']=l
-        return resp_json
     
-    def extract_perception(self,response):
-        prompt=self.missed_prompt + response
+    def extract_perception(self,response,schema):
+        print("\nExtracting perception with schema:")
+        print(schema)
+        self.missed_prompt=self.missed_prompt.replace("{context}",str(schema))
+        prompt=self.missed_prompt.replace("{latest_response}",str(response))
         client=self.auth.client 
         response = client.models.generate_content(
             model="gemini-2.0-flash", contents=prompt
         )
-        return response.text
+        ans=self.strip(response.text)
+        ans=eval(ans)
+        l=self.find_empty_values(ans)
+        ans['missed']=l
+        return ans
 
     def find_empty_values(self, json_obj):
         l=[]
@@ -77,11 +80,3 @@ class Perception:
 #         "ambiguous": []
 #     }
 
-obj=Perception(Auth(r"C:\ResumeGenerator\resGen\.env"))
-text=""" I'm Arjun and I'm currently in my third year at KMIT. I interned at a company called Celume Studios.
-"""
-ns=obj.get_Initialperception(text)
-print(ns)
-print("=====================================================")
-l=obj.find_empty_values(ns)
-print(l)

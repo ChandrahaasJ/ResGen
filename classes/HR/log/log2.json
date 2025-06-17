@@ -1,0 +1,77 @@
+{
+  "iteration-0": "I am Chandrahaas Jasti currently in my 3rd B.Tech at KMIT. I would love to work with GenerativeAI, I have various projects in the fields of heathcare,cybersecurity and digital forensics. I am club head of Riti-the upcycling club of KMIT and also a part of the student council. I have been to ISB hackathon where we were placed in the top 10 where around 100+ teams have participated.",
+  "iteration-1": {
+    "name": "Chandrahaas Jasti",
+    "phone_number": "",
+    "email": "",
+    "current_work": {
+      "Student": [
+        "3rd year",
+        "KMIT",
+        "B.Tech"
+      ]
+    },
+    "experience": {},
+    "projects": {},
+    "skills": {
+      "GenerativeAI": []
+    },
+    "acheivements": [
+      {
+        "Riti-the upcycling club of KMIT": "Club Head"
+      },
+      {
+        "Student Council": "Member"
+      },
+      {
+        "ISB Hackathon": "Top 10 (out of 100+ teams)"
+      }
+    ],
+    "interests": [
+      "GenerativeAI",
+      "healthcare",
+      "cybersecurity",
+      "digital forensics"
+    ]
+  },
+  "iteration-2": {
+    "name": "Chandrahaas Jasti",
+    "phone_number": "+91 7981807540",
+    "email": "chandrahaasjasti@gmail.com",
+    "current_work": {
+      "Student": [
+        "3rd year",
+        "KMIT",
+        "B.Tech"
+      ]
+    },
+    "experience": "no-experience",
+    "projects": "no-projects",
+    "skills": {
+      "GenerativeAI": [
+        "transformers",
+        "LLMs",
+        "PyTorch",
+        "Neural Networks"
+      ]
+    },
+    "acheivements": [
+      {
+        "Riti-the upcycling club of KMIT": "Club Head"
+      },
+      {
+        "Student Council": "Member"
+      },
+      {
+        "ISB Hackathon": "Top 10 (out of 100+ teams)"
+      }
+    ],
+    "interests": [
+      "GenerativeAI",
+      "healthcare",
+      "cybersecurity",
+      "digital forensics"
+    ],
+    "missed": []
+  }
+}

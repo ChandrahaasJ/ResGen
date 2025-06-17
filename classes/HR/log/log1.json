@@ -16,8 +16,7 @@
                                     "Soft Skills": ["Speaking", "Team spirit"]
                                 },
                                 "acheivements": [],
-                                "interests": [],
-                                "ambiguous": []
+                                "interests": []
                             },
                     "heuristic 1":{
                                     "name": "Pravalika",
@@ -35,7 +34,6 @@
                                     },
                                     "acheivements": [],
                                     "interests": [],
-                                    "ambiguous": [],
                                     "missed":["phone_number","email", "experience","acheivements","interests" ]
                                 }
                 },
@@ -56,8 +54,7 @@
                                     "Soft Skills": ["Speaking", "Team spirit"]
                                 },
                                 "acheivements": ["top 500k in leetcode"],
-                                "interests": ["GenAI","utilizing APIs", "dogs"],
-                                "ambiguous": []
+                                "interests": ["GenAI","utilizing APIs", "dogs"]
                             },
                     "heuristic 2":{
                                     "name": "Pravalika",
@@ -75,7 +72,6 @@
                                     },
                                     "acheivements": ["top 500k in leetcode"],
                                     "interests": ["GenAI","utilizing APIs", "dogs"],
-                                    "ambiguous": [],
                                     "missed":[]
                                 }
                 },

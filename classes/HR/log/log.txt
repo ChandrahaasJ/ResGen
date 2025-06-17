@@ -1,0 +1,164 @@
+[AGENT] Tell me about yourself?
+hello, i m saachi, i m in 3rd year of cse, i love painting and organising things, I know java and python and little bit solidity, i have worked on 3 projects in different domains.
+=============== INITIAL SCHEMA =============
+{'name': 'Saachi', 'phone_number': '', 'email': '', 'current_work': {'Student': ['3rd year', 'CSE']}, 'experience': {}, 'projects': {}, 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity'], 'Interests': ['Painting', 'Organizing']}, 'acheivements': [], 'interests': ['Painting', 'Organising'], 'missed': ['phone_number', 'email', 'experience', 'projects', 'acheivements']}
+======== ITERATION-1 ===========
+ explain the following ['phone_number', 'email', 'experience', 'projects', 'acheivements']You can contact me at saachibhalgat@gmail.com and my phone no is 8121450512. I have worked as Virtual assistant for a Freelancer where i have managed clients social media accounts, communicated with different clients for their requirements. I worked under him for about 6 months.My projects include LLM stethoscope where we can taken audio sounds of 6 diseases and using an LLM predicted what disease was the audio. Other project i have worked is building an exercise app based on different themes where you can join with your friends and other people and do it together or join alone. The themes are based on famous movies to encourage people to exercise more and my next project is in the domain of blockchain which i m still working on. 
+
+Previous schema before update:
+{'name': 'Saachi', 'phone_number': '', 'email': '', 'current_work': {'Student': ['3rd year', 'CSE']}, 'experience': {}, 'projects': {}, 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity'], 'Interests': ['Painting', 'Organizing']}, 'acheivements': [], 'interests': ['Painting', 'Organising']}
+
+Extracting perception with schema:
+{'name': 'Saachi', 'phone_number': '', 'email': '', 'current_work': {'Student': ['3rd year', 'CSE']}, 'experience': {}, 'projects': {}, 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity'], 'Interests': ['Painting', 'Organizing']}, 'acheivements': [], 'interests': ['Painting', 'Organising']}
+
+Updated schema after perception:
+{'name': 'Saachi', 'phone_number': '8121450512', 'email': 'saachibhalgat@gmail.com', 'current_work': {'Student': ['3rd year', 'CSE']}, 'experience': {'Virtual Assistant': {'company': 'Freelancer', 'duration': '6 months', 'description': 'Managed clients social media accounts, communicated with different clients for their requirements'}}, 'projects': {'LLM Stethoscope': 'Taken audio sounds of 6 diseases and using an LLM predicted what disease was the audio.', 'Exercise App': 'Building an exercise app based on different themes where you can join with your friends and other people and do it together or join alone. The themes are based on famous movies to encourage people to exercise more', 'Blockchain Project': 'In progress'}, 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity'], 'Interests': ['Painting', 'Organizing'], 'Other': ['Social Media Management', 'Client Communication']}, 'acheivements': [], 'interests': ['Painting', 'Organising'], 'missed': ['acheivements']}
+======== ITERATION-2 ===========
+ explain the following ['acheivements']I worked as a Club Head of Riti, which is an Upcycling Club of Colle
+ge
+
+Previous schema before update:
+{'name': 'Saachi', 'phone_number': '8121450512', 'email': 'saachibhalgat@gmail.com', 'current_work': {'Student': ['3rd year', 'CSE']}, 'experience': {'Virtual Assistant': {'company': 'Freelancer', 'duration': '6 months', 'description': 'Managed clients social media accounts, communicated with different clients for their requirements'}}, 'projects': {'LLM Stethoscope': 'Taken audio sounds of 6 diseases and using an LLM predicted what disease was the audio.', 'Exercise App': 'Building an exercise app based on different themes where you can join with your friends and other people and do it together or join alone. The themes are based on famous movies to encourage people to exercise more', 'Blockchain Project': 'In progress'}, 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity'], 'Interests': ['Painting', 'Organizing'], 'Other': ['Social Media Management', 'Client Communication']}, 'acheivements': [], 'interests': ['Painting', 'Organising']}
+
+Extracting perception with schema:
+{'name': 'Saachi', 'phone_number': '8121450512', 'email': 'saachibhalgat@gmail.com', 'current_work': {'StudPrevious schema before update:
+{'name': 'Saachi', 'phone_number': '8121450512', 'email': 'saachibhalgat@gmail.com', 'current_work': {'Student': ['3rd year', 'CSE']}, 'experience': {'Virtual Assistant': {'company': 'Freelancer', 'duration': '6 months', 'description': 'Managed clients social media accounts, communicated with different clients for their requirements'}}, 'projects': {'LLM Stethoscope': 'Taken audio sounds of 6 diseases and using an LLM predicted what disease was the audio.', 'Exercise App': 'Building an exercise app based on different themes where you can join with your friends and other people and do it together or join alone. The themes are based on famous movies to encourage people to exercise more', 'Blockchain Project': 'In progress'}, 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity'], 'Interests': ['Painting', 'Organizing'], 'Other': ['Social Media Management', 'Client Communication']}, 'acheivements': [], 'interests': ['Painting', 'Organising']}
+
+Extracting perception with schema:
+{'name': 'Saachi', 'phone_number': '8121450512', 'email': 'saachibhalgat@gmail.com', 'current_work': {'Stud{'name': 'Saachi', 'phone_number': '8121450512', 'email': 'saachibhalgat@gmail.com', 'current_work': {'Student': ['3rd year', 'CSE']}, 'experience': {'Virtual Assistant': {'company': 'Freelancer', 'duration': '6 months', 'description': 'Managed clients social media accounts, communicated with different clients for their requirements'}}, 'projects': {'LLM Stethoscope': 'Taken audio sounds of 6 diseases and using an LLM predicted what disease was the audio.', 'Exercise App': 'Building an exercise app based on different themes where you can join with your friends and other people and do it together or join alone. The themes are based on famous movies to encourage people to exercise more', 'Blockchain Project': 'In progress'}, 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity'], 'Interests': ['Painting', 'Organizing'], 'Other': ['Social Media Management', 'Client Communication']}, 'acheivements': [], 'interests': ['Painting', 'Organising']}
+
+Extracting perception with schema:
+{'name': 'Saachi', 'phone_number': '8121450512', 'email': 'saachibhalgat@gmail.com', 'current_work': {'Studted what disease was the audio.', 'Exercise App': 'Building an exercise app based on different themes where you can join with your friends and other people and do it together or join alone. The themes are based on famous movies to encourage people to exercise more', 'Blockchain Project': 'In progress'}, 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity'], 'Interests': ['Painting', 'Organizing'], 'Other': ['Social Media Management', 'Client Communication']}, 'acheivements': [], 'interests': ['Painting', 'Organising']}
+
+Extracting perception with schema:
+{'name': 'Saachi', 'phone_number': '8121450512', 'email': 'saachibhalgat@gmail.com', 'current_work': {'Studfamous movies to encourage people to exercise more', 'Blockchain Project': 'In progress'}, 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity'], 'Interests': ['Painting', 'Organizing'], 'Other': ['Social Media Management', 'Client Communication']}, 'acheivements': [], 'interests': ['Painting', 'Organising']}
+
+Extracting perception with schema:
+{'name': 'Saachi', 'phone_number': '8121450512', 'email': 'saachibhalgat@gmail.com', 'current_work': {'Studial Media Management', 'Client Communication']}, 'acheivements': [], 'interests': ['Painting', 'Organising']}
+
+Extracting perception with schema:
+{'name': 'Saachi', 'phone_number': '8121450512', 'email': 'saachibhalgat@gmail.com', 'current_work': {'Stud
+
+Extracting perception with schema:
+{'name': 'Saachi', 'phone_number': '8121450512', 'email': 'saachibhalgat@gmail.com', 'current_work': {'Student': ['3rd year', 'CSE']}, 'experience': {'Virtual Assistant': {'company': 'Freelancer', 'duration': '6 months', 'description': 'Managed clients social media accounts, communicated with different clients for their requirements'}}, 'projects': {'LLM Stethoscope': 'Taken audio sounds of 6 diseases and using an LLM predicent': ['3rd year', 'CSE']}, 'experience': {'Virtual Assistant': {'company': 'Freelancer', 'duration': '6 months', 'description': 'Managed clients social media accounts, communicated with different clients for their requirements'}}, 'projects': {'LLM Stethoscope': 'Taken audio sounds of 6 diseases and using an LLM predicnths', 'description': 'Managed clients social media accounts, communicated with different clients for their requirements'}}, 'projects': {'LLM Stethoscope': 'Taken audio sounds of 6 diseases and using an LLM predicted what disease was the audio.', 'Exercise App': 'Building an exercise app based on different themes where you can join with your friends and other people and do it together or join alone. The themes are based on famous movies to encourage people to exercise more', 'Blockchain Project': 'In progress'}, 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity'], 'Interests': ['Painting', 'Organizing'], 'Other': ['Socted what disease was the audio.', 'Exercise App': 'Building an exercise app based on different themes where you can join with your friends and other people and do it together or join alone. The themes are based on famous movies to encourage people to exercise more', 'Blockchain Project': 'In progress'}, 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity'], 'Interests': ['Painting', 'Organizing'], 'Other': ['Socfamous movies to encourage people to exercise more', 'Blockchain Project': 'In progress'}, 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity'], 'Interests': ['Painting', 'Organizing'], 'Other': ['Social Media Management', 'Client Communication']}, 'acheivements': [], 'interests': ['Painting', 'Organising'ial Media Management', 'Client Communication']}, 'acheivements': [], 'interests': ['Painting', 'Organising']}
+]}
+
+
+Updated schema after perception:
+{'name': 'Saachi', 'phone_number': '', 'email': '', 'current_work': {'Student': ['3rd year', 'CSE']}, 'expe{'name': 'Saachi', 'phone_number': '', 'email': '', 'current_work': {'Student': ['3rd year', 'CSE']}, 'experience': {'Club Head': ['Riti', 'Upcycling Club of College']}, 'projects': {}, 'skills': {'Programming Langrience': {'Club Head': ['Riti', 'Upcycling Club of College']}, 'projects': {}, 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity'], 'Interests': ['Painting', 'Organizing']}, 'acheivements': [], 'interests': ['Painting', 'Organising'], 'missed': ['phone_number', 'email', 'projects', 'acheivements']}       
+rests': ['Painting', 'Organising'], 'missed': ['phone_number', 'email', 'projects', 'acheivements']}       
+======== ITERATION-3 ===========
+======== ITERATION-3 ===========
+ explain the following ['phone_number', 'email', 'projects', 'acheivements']no phone_number no email and no projects
+
+Previous schema before update:
+{'name': 'Saachi', 'phone_number': '', 'email': '', 'current_work': {'Student': ['3rd year', 'CSE']}, 'experience': {'Club Head': ['Riti', 'Upcycling Club of College']}, 'projects': {}, 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity'], 'Interests': ['Painting', 'Organizing']}, 'acheivements': [], 'interests': ['Painting', 'Organising']}
+
+Extracting perception with schema:
+{'name': 'Saachi', 'phone_number': '', 'email': '', 'current_work': {'Student': ['3rd year', 'CSE']}, 'experience': {'Club Head': ['Riti', 'Upcycling Club of College']}, 'projects': {}, 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity'], 'Interests': ['Painting', 'Organizing']}, 'acheivements': [], 'interests': ['Painting', 'Organising']}
+
+Updated schema after perception:
+{'name': 'Saachi', 'phone_number': 'no-phone_number', 'email': 'no-email', 'current_work': {'Student': ['3rd year', 'CSE']}, 'experience': {}, 'projects': 'no-projects', 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity'], 'Interests': ['Painting', 'Organizing']}, 'acheivements': [], 'interests': ['Painting', 'Organising'], 'missed': ['experience', 'acheivements']}
+======== ITERATION-4 ===========
+ explain the following ['experience', 'acheivements']i dont have any experience or acheivements
+
+Previous schema before update:
+{'name': 'Saachi', 'phone_number': 'no-phone_number', 'email': 'no-email', 'current_work': {'Student': ['3rd year', 'CSE']}, 'experience': {}, 'projects': 'no-projects', 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity'], 'Interests': ['Painting', 'Organizing']}, 'acheivements': [], 'interests': ['Painting', 'Organising']}
+
+Extracting perception with schema:
+{'name': 'Saachi', 'phone_number': 'no-phone_number', 'email': 'no-email', 'current_work': {'Student': ['3rd year', 'CSE']}, 'experience': {}, 'projects': 'no-projects', 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity'], 'Interests': ['Painting', 'Organizing']}, 'acheivements': [], 'interests': ['Painting', 'Organising']}
+
+Updated schema after perception:
+{'name': 'Saachi', 'phone_number': '', 'email': '', 'current_work': {'Student': ['3rd year', 'CSE']}, 'experience': 'no-experience', 'projects': {}, 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity'], 'Interests': ['Painting', 'Organizing']}, 'acheivements': 'no-achievements', 'interests': ['Painting', 'Organising'], 'missed': ['phone_number', 'email', 'projects']}
+======== ITERATION-5 ===========
+ explain the following ['phone_number', 'email', 'projects']no contacts, no projects
+
+Previous schema before update:
+{'name': 'Saachi', 'phone_number': '', 'email': '', 'current_work': {'Student': ['3rd year', 'CSE']}, 'experience': 'no-experience', 'projects': {}, 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity'], 'Interests': ['Painting', 'Organizing']}, 'acheivements': 'no-achievements', 'interests': ['Painting', 'Organising']}
+
+Extracting perception with schema:
+{'name': 'Saachi', 'phone_number': '', 'email': '', 'current_work': {'Student': ['3rd year', 'CSE']}, 'experience': 'no-experience', 'projects': {}, 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity'], 'Interests': ['Painting', 'Organizing']}, 'acheivements': 'no-achievements', 'interests': ['Painting', 'Organising']}
+
+Updated schema after perception:
+{'name': 'Saachi', 'phone_number': '', 'email': '', 'current_work': {'Student': ['3rd year', 'CSE']}, 'experience': {}, 'projects': 'no-projects', 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity'], 'Interests': ['Painting', 'Organizing']}, 'acheivements': [], 'interests': ['Painting', 'Organising'], 'missed': ['phone_number', 'email', 'experience', 'acheivements']}
+======== ITERATION-6 ===========
+ explain the following ['phone_number', 'email', 'experience', 'acheivements']break the loop
+
+Previous schema before update:
+{'name': 'Saachi', 'phone_number': '', 'email': '', 'current_work': {'Student': ['3rd year', 'CSE']}, 'experience': {}, 'projects': 'no-projects', 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity'], 'Interests': ['Painting', 'Organizing']}, 'acheivements': [], 'interests': ['Painting', 'Organising']}
+
+Extracting perception with schema:
+{'name': 'Saachi', 'phone_number': '', 'email': '', 'current_work': {'Student': ['3rd year', 'CSE']}, 'experience': {}, 'projects': 'no-projects', 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity'], 'Interests': ['Painting', 'Organizing']}, 'acheivements': [], 'interests': ['Painting', 'Organising']}
+
+Updated schema after perception:
+{'name': 'Saachi', 'phone_number': '', 'email': '', 'current_work': {'Student': ['3rd year', 'CSE']}, 'experience': {}, 'projects': {}, 'skills': {'Programming Language======== ITERATION-6 ===========
+ explain the following ['phone_number', 'email', 'experience', 'acheivements']break the loop
+
+Previous schema before update:
+{'name': 'Saachi', 'phone_number': '', 'email': '', 'current_work': {'Student': ['3rd year', 'CSE']}, 'experience': {}, 'projects': 'no-projects', 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity'], 'Interests': ['Painting', 'Organizing']}, 'acheivements': [], 'interests': ['Painting', 'Organising']}
+
+Extracting perception with schema:
+{'name': 'Saachi', 'phone_number': '', 'email': '', 'current_work': {'Student': ['3rd year', 'CSE']}, 'experience': {}, 'projects': 'no-projects', 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity'], 'Interests': ['Painting', 'Organizing']}, 'acheivements': [], 'interests': ['Painting', 'Organising']}
+
+Updated schema after perception:
+{'name': 'Saachi', 'phone_number': '', 'email': '', 'current_work': {'Student': ['3rd year', 'CSE']}, 'experience': {}, 'projects': {}, 'skills': {'Programming Language{'name': 'Saachi', 'phone_number': '', 'email': '', 'current_work': {'Student': ['3rd year', 'CSE']}, 'experience': {}, 'projects': 'no-projects', 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity'], 'Interests': ['Painting', 'Organizing']}, 'acheivements': [], 'interests': ['Painting', 'Organising']}
+
+Updated schema after perception:
+{'name': 'Saachi', 'phone_number': '', 'email': '', 'current_work': {'Student': ['3rd year', 'CSE']}, 'experience': {}, 'projects': {}, 'skills': {'Programming Languageng Languages': ['Java', 'Python', 'Solidity'], 'Interests': ['Painting', 'Organizing']}, 'acheivements': [], 'interests': ['Painting', 'Organising']}
+
+Updated schema after perception:
+{'name': 'Saachi', 'phone_number': '', 'email': '', 'current_work': {'Student': ['3rd year', 'CSE']}, 'experience': {}, 'projects': {}, 'skills': {'Programming Language{'name': 'Saachi', 'phone_number': '', 'email': '', 'current_work': {'Student': ['3rd year', 'CSE']}, 'experience': {}, 'projects': {}, 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity'], 'Interests': ['Painting', 'Organizing']}, 'acheivements': [], 'interests': ['Painting', 'Organising'], 'missed': ['phone_number', 'email', 'experience', 'projects', 'acheivements']}
+======== ITERATION-7 ===========
+ explain the following ['phone_number', 'email', 'experience', 'projects', 'acheivements']Traceback (most recent call last):
+  File "c:\ResumeGenerator\resGen\Agent.py", line 32, in <module>
+    reply=input(" explain the following "+str(li))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+vements': [], 'interests': ['Painting', 'Organising'], 'missed': ['phone_number', 'email', 'experience', 'projects', 'acheivements']}
+======== ITERATION-7 ===========
+ explain the following ['phone_number', 'email', 'experience', 'projects', 'acheivements']Traceback (most recent call last):
+  File "c:\ResumeGenerator\resGen\Agent.py", line 32, in <module>
+    reply=input(" explain the following "+str(li))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+ents']Traceback (most recent call last):
+  File "c:\ResumeGenerator\resGen\Agent.py", line 32, in <module>
+    reply=input(" explain the following "+str(li))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+PS C:\ResumeGenerator> python -u "c:\ResumeGenerator\resGen\Agent.py"
+[AGENT] Tell me about yourself?
+hello, i m saachi, i m in 3rd year of cse, i love painting and organising things, I know java and python and little bit solidity, i have worked on 3 projects in different domains.
+=============== INITIAL SCHEMA =============
+{'name': 'Saachi', 'phone_number': '', 'email': '', 'current_work': {'Student': ['3rd year', '', 'CSE']}, 'experience': {}, 'projects': {}, 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity']}, 'acheivements': [], 'interests': ['Painting', 'Organising'], 'missed': ['phone_number', 'email', 'experience', 'projects', 'acheivements']}
+======== ITERATION-1 ===========
+ explain the following ['phone_number', 'email', 'experience', 'projects', 'acheivements']You can contact me at saachibhalgat@gmail.com and my phone no is 8121450512. I have worked as Virtual assistant for a Freelancer where i have managed clients social media accounts, communicated with different clients for their requirements. I worked under him for about 6 months.My projects include LLM stethoscope where we can taken audio sounds of 6 diseases and using an LLM predicted what disease was the audio. Other project i have worked is building an exercise app based on different themes where you can join with your friends and other people and do it together or join alone. The themes are based on famous movies to encourage people to exercise more and my next project is in the domain of blockchain which i m still working on.
+
+Previous schema before update:
+{'name': 'Saachi', 'phone_number': '', 'email': '', 'current_work': {'Student': ['3rd year', '', 'CSE']}, 'experience': {}, 'projects': {}, 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity']}, 'acheivements': [], 'interests': ['Painting', 'Organising']}
+
+Extracting perception with schema:
+{'name': 'Saachi', 'phone_number': '', 'email': '', 'current_work': {'Student': ['3rd year', '', 'CSE']}, 'experience': {}, 'projects': {}, 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity']}, 'acheivements': [], 'interests': ['Painting', 'Organising']}
+
+Updated schema after perception:
+{'name': 'Saachi', 'phone_number': '8121450512', 'email': 'saachibhalgat@gmail.com', 'current_work': {'Student': ['3rd year', '', 'CSE']}, 'experience': {'Virtual Assistant': ['Freelancer', 'Managed clients social media accounts, communicated with different clients for their requirements', '6 months']}, 'projects': {'LLM Stethoscope': 'taken audio sounds of 6 diseases and using an LLM predicted what disease was the audio', 'Exercise App': 'building an exercise app based on different themes where you can join with your friends and other people and do it together or join alone. The themes are based on famous movies to encourage people to exercise more', 'Blockchain Project': 'in the domain of blockchain which i m still working on'}, 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity']}, 'acheivements': [], 'interests': ['Painting', 'Organising'], 'missed': ['acheivements']}
+======== ITERATION-2 ===========
+ explain the following ['acheivements']I worked as a Club Head of Riti, which is an Upcycling Club of Colle
+
+Previous schema before update:
+{'name': 'Saachi', 'phone_number': '8121450512', 'email': 'saachibhalgat@gmail.com', 'current_work': {'Student': ['3rd year', '', 'CSE']}, 'experience': {'Virtual Assistant': ['Freelancer', 'Managed clients social media accounts, communicated with different clients for their requirements', '6 months']}, 'projects': {'LLM Stethoscope': 'taken audio sounds of 6 diseases and using an LLM predicted what disease was the audio', 'Exercise App': 'building an exercise app based on different themes where you can join with your friends and other people and do it together or join alone. The themes are based on famous movies to encourage people to exercise more', 'Blockchain Project': 'in the domain of blockchain which i m still working on'}, 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity']}, 'acheivements': [], 'interests': ['Painting', 'Organising']}
+
+Extracting perception with schema:
+{'name': 'Saachi', 'phone_number': '8121450512', 'email': 'saachibhalgat@gmail.com', 'current_work': {'Student': ['3rd year', '', 'CSE']}, 'experience': {'Virtual Assistant': ['Freelancer', 'Managed clients social media accounts, communicated with different clients for their requirements', '6 months']}, 'projects': {'LLM Stethoscope': 'taken audio sounds of 6 diseases and using an LLM predicted what disease was the audio', 'Exercise App': 'building an exercise app based on different themes where you can join with your friends and other people and do it together or join alone. The terent clients for their requirements', '6 months']}, 'projects': {'LLM Stethoscope': 'taken audio sounds of 6 diseases and using an LLM predicted what disease was the audio', 'Exercise App': 'building an exercise app based on different themes where you can join with your friends and other people and do it together or join alone. The themes are based on famous movies to encourage people to exercise more', 'Blockchain Project': 'in the domain of blockchain which i m still working on'}, 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity']}, 'acheivements': [], 'interests': ['Painting', 'Organising']}
+
+Extracting perception with schema:
+{'name': 'Saachi', 'phone_number': '8121450512', 'email': 'saachibhalgat@gmail.com', 'current_work': {'Student': ['3rd year', '', 'CSE']}, 'experience': {'Virtual Assistant': ['Freelancer', 'Managed clients social media accounts, communicated with different clients for their requirements', '6 months']}, 'projects': {'LLM Stethoscope': 'taken audio sounds of 6 diseases and using an LLM predicted what disease was the audio', 'Exercise App': 'building an exercise app based on different themes where you can join with your friends and other people and do it together or join alone. The t
+
+Extracting perception with schema:
+{'name': 'Saachi', 'phone_number': '8121450512', 'email': 'saachibhalgat@gmail.com', 'current_work': {'Student': ['3rd year', '', 'CSE']}, 'experience': {'Virtual Assistant': ['Freelancer', 'Managed clients social media accounts, communicated with different clients for their requirements', '6 months']}, 'projects': {'LLM Stethoscope': 'taken audio sounds of 6 diseases and using an LLM predicted what disease was the audio', 'Exercise App': 'building an exercise app based on different themes where you can join with your friends and other people and do it together or join alone. The terent clients for their requirements', '6 months']}, 'projects': {'LLM Stethoscope': 'taken audio sounds of 6 diseases and using an LLM predicted what disease was the audio', 'Exercise App': 'building an exercise app based on different themes where you can join with your friends and other people and do it together or join alone. The t can join with your friends and other people and do it together or join alone. The themes are based on famous movies to encourage people to exercise more', 'Blockchain Project': 'in the domain of blockchain which i m still working on'}, 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity']}, 'acheivements': [], 'interests': ['Painting', 'Organising']}
+
+Updated schema after perception:
+{'name': 'Saachi', 'phone_number': '', 'email': '', 'current_work': {'Student': ['3rd year', '', 'CSE']}, 'experience': {'Club Head': ['Riti', 'Upcycling Club of Colle'Updated schema after perception:
+{'name': 'Saachi', 'phone_number': '', 'email': '', 'current_work': {'Student': ['3rd year', '', 'CSE']}, 'experience': {'Club Head': ['Riti', 'Upcycling Club of Colle'{'name': 'Saachi', 'phone_number': '', 'email': '', 'current_work': {'Student': ['3rd year', '', 'CSE']}, 'experience': {'Club Head': ['Riti', 'Upcycling Club of Colle'd year', '', 'CSE']}, 'experience': {'Club Head': ['Riti', 'Upcycling Club of Colle']}, 'projects': {}, 'skills': {'Programming Languages': ['Java', 'Python', 'Solidity']}, 'achei']}, 'acheivements': [], 'interests': ['Painting', 'Organising'], 'missed': ['phone_number', 'email', 'projects', 'acheivements']}
+======== ITERATION-3 ===========
+ explain the following ['phone_number', 'email', 'projects', 'acheivements'] 

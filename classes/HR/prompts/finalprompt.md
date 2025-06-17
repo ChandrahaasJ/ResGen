@@ -20,6 +20,9 @@ Given a candidate’s freeform self-introduction, extract the following fields:
             frameworks: [string]
         }
     },
+    projects: {
+        project
+    }
     skills: {
         domain_name1: [skills],
         domain_name2: [skills]
@@ -41,7 +44,10 @@ Required Fields
             -description
             -frameworks: Technologies/tools used
             #If none, assign an empty dictionary#
-
+ -projects - each project section will contain the following fields:
+            -title:If missing, generate a title from context
+            -description:
+            -frameworks:
  -skills – Categorize under relevant domains
         -Example: "GenerativeAI": ["prompt engineering", "LLM finetuning"]
  -acheivements – e.g., Leadership roles, awards, student clubs
